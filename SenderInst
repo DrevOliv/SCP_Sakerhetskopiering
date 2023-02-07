@@ -1,0 +1,58 @@
+#!/bin/bash
+
+if [ "$EUID" == 0 ];
+  then echo "Please dont run as sudo"
+  exit
+fi
+
+if [ -z "$1" ]; 
+  then echo "Ned to give server username"
+  exit
+fi
+
+if [ -z "$2" ]; 
+  then echo "Need to give the ip of the server"
+  exit
+fi
+
+filedir=$(dirname -- $0)
+
+# pubkey=""
+
+cd 
+
+chmod 700 ./.ssh/
+
+echo pubkey >> authorized_keys
+
+chmod 600 ./.ssh/*
+
+# while IFS='' read -r a; do
+#     echo "${a//NAME/$USER}"
+# done < $filedir/SenderScriptSKP > $filedir/SenderScriptSKP.t
+# mv $filedir/SenderScriptSKP{.t,}
+
+# while IFS='' read -r a; do
+#     echo "${a//NAMES/$1}"
+# done < $filedir/SenderScriptSKP > $filedir/SenderScriptSKP.t
+# mv $filedir/SenderScriptSKP{.t,}
+
+# while IFS='' read -r a; do
+#     echo "${a//IP/$2}"
+# done < $filedir/SenderScriptSKP > $filedir/SenderScriptSKP.t
+# mv $filedir/SenderScriptSKP{.t,}
+
+touch temp.txt
+
+crontab -l > temp.txt
+
+echo 59 23 "* * *" scp -r /home/$USER $1@$2:/home/$1/Documents/Sakerhetskopiering/'$(date '+%Y')/$(date '+%m')/$(date '+%d')' > temp.txt
+
+crontab temp.txt
+
+rm temp.txt
+
+echo -e "${GREEN}All done and ready to use"
+echo -e "remove instalation folder${NC}"
+
+#rm -- "$0"
