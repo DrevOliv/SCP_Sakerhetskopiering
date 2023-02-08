@@ -17,7 +17,7 @@ fi
 
 filedir=$(dirname -- $0)
 
-# pubkey=""
+pubkey="hejhej"
 
 cd 
 
