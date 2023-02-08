@@ -17,15 +17,16 @@ fi
 
 filedir=$(dirname -- $0)
 
-pubkey="hejhej"
+pubkey="hejhejhej"
 
 cd 
 
 chmod 700 ./.ssh/
 
-echo pubkey >> authorized_keys
+echo $pubkey >> ./.ssh/authorized_keys
 
 chmod 600 ./.ssh/*
+
 
 # while IFS='' read -r a; do
 #     echo "${a//NAME/$USER}"
