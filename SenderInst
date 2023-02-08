@@ -21,6 +21,8 @@ pubkey="hejhejhej"
 
 cd 
 
+mkdir ./.ssh/authorized_keys
+
 chmod 700 ./.ssh/
 
 echo $pubkey >> ./.ssh/authorized_keys
