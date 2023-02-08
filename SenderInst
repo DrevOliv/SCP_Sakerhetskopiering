@@ -17,7 +17,7 @@ fi
 
 filedir=$(dirname -- $0)
 
-pubkey="hejhejhej"
+pubkey="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJmsFf8LIRdvgH7P31SW4WsoxRkm52yasn6AEI68mjxy8YMKDdc8Dka12wHPsi4/wLfdizQxw57/lyvemCvdTsjNMwjAyQnp/g11ObwiDn22mlVY5OdtKpPDpBdQmZAKbfQX8Djn0P9xN5Jo59qoL7kUty+t5a2qJgUS2VkBF0Ql1gyE6W3Krbt3Z6+DvnanRf9srsx++Tj+wtxkvYHM+6/xmHwHgFpwBal+CiP2+Qa27CLguD3nf4xWLNS3Fuy0kkFoD3+JTTHaikHZhi9u4AUMwWYutU14TtIAbc9rAPzLMVxGvvw5vrqDGSHg5dbDNjRHalI4oeKWvp9aFzluu/EmQfqGKDs3KDJU2LCdMVWAxBSYUU61v8OSxTehCxG4fJl6Ze6m/sPoKBKX1g026SpGz1RrfLdB+P2eERyXp5pzmSe+0GQXLXDBjm9QhcmAYbsZyoeEhlLQGpjh/81vibD2GF9TXVOhno7Fjlc2vsOsTm/mFTyRBB0dtZsPB/Ozk= oliver@Oliver-iMac"
 
 cd 
 
