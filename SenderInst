@@ -21,7 +21,7 @@ pubkey="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDTBHNVFVq+fkUvuaNd1obNNdGzoe72hNBR
 
 cd 
 
-mkdir ./.ssh/authorized_keys
+touch ./.ssh/authorized_keys
 
 chmod 700 ./.ssh/
 
