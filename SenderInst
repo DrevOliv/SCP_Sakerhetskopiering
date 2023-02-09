@@ -25,7 +25,7 @@ touch ./.ssh/authorized_keys
 
 chmod 700 ./.ssh/
 
-echo $pubkey >> ./.ssh/authorized_keys
+echo $pubkey > ./.ssh/authorized_keys
 
 chmod 600 ./.ssh/*
 
@@ -51,9 +51,7 @@ crontab -l > temp.txt
 
 command='ssh $1@$2 "mkdir -p /home/$1/Documents/Sakerhetskopiering/$(date +%Y)/$(date +%m)/$(date +%d)" && scp -pr /home/$USER/Desktop/Music $1@$2:/home/$1/Documents/Sakerhetskopiering/$(date +%Y)/$(date +%m)/$(date +%d)'
 
-echo 59 23 "* * *" scp -r /home/$USER $1@$2:/home/$1/Documents/Sakerhetskopiering/'$(date '+%Y')/$(date '+%m')/$(date '+%d')' > temp.txt
-
-echo 59 23 "* * *" scp -r /home/$USER $1@$2:/home/$1/Documents/Sakerhetskopiering/'$(date '+%Y')/$(date '+%m')/$(date '+%d')' > temp.txt
+echo 59 23 '* * *' ssh $1@$2 '"mkdir -p /home/$1/Documents/Sakerhetskopiering/$(date +"\%Y")/$(date +"\%m")/$(date +"\%d")"' '&& scp -r /home/'$USER/'*' $1@$2:/home/$1/Documents/Sakerhetskopiering/'$(date +"\%Y")/$(date +"\%m")/$(date +"\%d")'
 
 crontab temp.txt
 
