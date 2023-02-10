@@ -49,7 +49,7 @@ touch temp.txt
 
 crontab -l > temp.txt
 
-echo 59 23 '* * *' ssh $1@$2 '"mkdir -p /home/$1/Documents/Sakerhetskopiering/$(date +"\%Y")/$(date +"\%m")/$(date +"\%d")"' '&& scp -r /home/'$USER/'*' $1@$2:/home/$1/Documents/Sakerhetskopiering/'$(date +"\%Y")/$(date +"\%m")/$(date +"\%d")' > temp.txt
+echo 59 23 '* * *' ssh $1@$2 '"mkdir -p /home/'$1'/Documents/Sakerhetskopiering/$(date +"\%Y")/$(date +"\%m")/$(date +"\%d")"' '&& scp -r /home/'$USER/'*' $1@$2:/home/$1/Documents/Sakerhetskopiering/'$(date +"\%Y")/$(date +"\%m")/$(date +"\%d")' > temp.txt
 
 crontab temp.txt
 
